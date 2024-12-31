@@ -37,7 +37,7 @@ def plot_error_surface(ax1, m, b, M, B, Z, x, y):
     return point, surf
 
 def init_linear_plot(ax2, x, y, m, b, fig):
-    ax2.scatter(x, y, color='forestgreen')
+    ax2.scatter(x, y, color='blue')
     line, = ax2.plot(x, m * x + b, 'r-')
     ax2.set_title(f'm = {m:.2f}, b = {b:.2f}')
     ax2.set_xlabel('x')

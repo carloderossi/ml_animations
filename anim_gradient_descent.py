@@ -32,7 +32,7 @@ def update(frame):
     error = chlp.compute_error(m, b, x, y)
 
     # plot previous points
-    ax1.scatter([m], [b], [error], color='blue')
+    ax1.scatter([m], [b], [error], color='navy') # forestgreen
 
     # Update the 3D point
     point.set_data([m], [b])
