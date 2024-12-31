@@ -5,3 +5,6 @@
 /regression_poly_anim.py
 /under_over_fitting_anim.py
 /__pycache__
+gradient_descent.gif
+regularization_gradient_descent.gif
+anim_regulariz_L1L2.py

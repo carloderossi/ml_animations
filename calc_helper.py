@@ -48,3 +48,29 @@ def calc_rsquared(degree, y_test, y_pred_test):
         adjusted_r2 = 1 - ((1 - r2) * (n - 1) / (n - p - 1))
         
     return adjusted_r2
+
+def gen_sample_data():
+    np.random.seed(0)
+    x = np.linspace(-2, 2, 20)
+    y = 3 * x + 2 + np.random.normal(scale=2, size=x.shape)
+    return x,y
+
+# Define the loss function
+def compute_error(m, b, x, y):
+    return np.mean((y - (m * x + b))**2)
+
+# Gradient descent update
+def gradient_descent_step(m, b, x, y, lr):
+    N = len(y)
+    dm = -2 / N * np.sum(x * (y - (m * x + b)))
+    db = -2 / N * np.sum(y - (m * x + b))
+    m -= lr * dm
+    b -= lr * db
+    return m, b
+
+def create_grid(x, y):
+    m_vals = np.linspace(-10, 10, 100)
+    b_vals = np.linspace(-10, 10, 100)
+    M, B = np.meshgrid(m_vals, b_vals)
+    Z = np.array([[compute_error(m, b, x, y) for m, b in zip(row_m, row_b)] for row_m, row_b in zip(M, B)])
+    return m_vals, b_vals, M, B, Z

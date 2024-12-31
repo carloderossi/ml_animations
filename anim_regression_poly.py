@@ -69,8 +69,8 @@ def update(degree):
 
 # Create animation
 #fig.suptitle("Polynomial Regression Animation")
-ani = animation.FuncAnimation(fig, update, frames=range(1, 16), interval=1000, blit=False, cache_frame_data=True) # blit=False for updating text!!
-ani.save("polynomial_regression.gif", writer="pillow")
+animation = animation.FuncAnimation(fig, update, frames=range(1, 16), interval=1000, blit=False, cache_frame_data=True) # blit=False for updating text!!
+animation.save("polynomial_regression.gif", writer="pillow")
 plt.get_current_fig_manager().set_window_title("Polynomial Regression Animation") # ensure window's title
 plt.tight_layout() # Adjust subplot parameters for a tight layout
 plt.show()

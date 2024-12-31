@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import calc_helper as chlp
 
 def init_regression_plot(ax1, x_train, y_train,x_test, y_test):
     train_scatter1 = ax1.scatter(x_train, y_train, color="blue", label="Training Data")
@@ -25,3 +26,23 @@ def init_biasvariance_plot(ax2):
     ax2.set_ylim(0, 50) # Set y-axis limit to accommodate errors
     ax2.grid(True)
     return line_train, line_test
+
+def plot_error_surface(ax1, m, b, M, B, Z, x, y):
+    surf = ax1.plot_surface(M, B, Z, cmap='viridis', alpha=0.5, edgecolor='none') # viridis, coolwarm
+    point = ax1.plot([m], [b], [chlp.compute_error(m, b, x, y)], 'ro')[0]
+    ax1.set_xlabel('m')
+    ax1.set_ylabel('b')
+    ax1.set_zlabel('Error')
+    ax1.set_title('Error = {:.2f}'.format(chlp.compute_error(m, b, x, y)))
+    return point, surf
+
+def init_linear_plot(ax2, x, y, m, b, fig):
+    ax2.scatter(x, y, color='forestgreen')
+    line, = ax2.plot(x, m * x + b, 'r-')
+    ax2.set_title(f'm = {m:.2f}, b = {b:.2f}')
+    ax2.set_xlabel('x')
+    ax2.set_ylabel('y')
+    ax2.set_ylim(-10, 10)
+    ax2.grid(True)
+    fig.tight_layout()
+    return line
