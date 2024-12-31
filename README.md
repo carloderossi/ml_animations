@@ -27,11 +27,11 @@ Here's an example visualization illustrating the concepts, as an animation:
 
 ![Polynomial Regression Visualization](./images/polynomial_regression.gif)
 
-The image consists of two plots:
+The animation consists of two plots:
 
-1. **Top Plot (Polynomial Degree: 11)**:
+1. **Top Plot (Polynomial Regression for Degree: 1 - 15)**:
    - **Data Points**: Blue dots represent training data, and green dots represent testing data.
-   - **Model Curve**: The red line represents the polynomial regression model of degree 11.
+   - **Model Curve**: The red line represents the polynomial regression model for the polynomial degree from 1 to 15.
    - **Adjusted R-squared**: 0.8962, indicating the proportion of variance in the dependent variable that is predictable from the independent variable.
 
 2. **Bottom Plot (Bias-Variance Tradeoff)**:
