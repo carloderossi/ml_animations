@@ -38,6 +38,6 @@ The animation consists of two plots:
    - **Mean Squared Error (MSE)**: Plotted against polynomial degrees ranging from 1 to 15.
    - **Training Error**: Represented by the blue line.
    - **Testing Error**: Represented by the orange line.
-   - **Test Error**: The minimum test error is 15.961447136002084, indicating the optimal polynomial degree.
+   - **Test Error**: The minimum test error is 15.30, indicating the optimal polynomial degree.
 
 These plots illustrate the importance of selecting the appropriate polynomial degree to minimize the test error and achieve a model that generalizes well to unseen data.
