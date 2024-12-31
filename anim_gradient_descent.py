@@ -1,4 +1,3 @@
-import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import animation_helper as ahlp
@@ -45,9 +44,49 @@ def update(frame):
 
     return point, line
 
-# Create the animation
-animation = FuncAnimation(fig, update, frames=100, interval=100, blit=False, cache_frame_data=True)
+# Parameters
+frames = 100
+interval = 100
+
+# Create the animation with easing
+animation = FuncAnimation(fig, update, frames=frames, interval=interval, blit=False, cache_frame_data=True)
 
 # Save the animation
 animation.save('gradient_descent.gif', writer='pillow')
      
+
+
+
+""" 
+# Easing function for smooth speed transition
+def easing(t, start, end):
+    return start + (end - start) * t**2
+
+# Update function for animation with easing
+def update_with_easing(frame):
+    global m, b
+    t = frame / (frames - 1)  # Normalized time variable from 0 to 1
+    eased_frame = easing(t, 0, frames - 1)
+
+    # Perform the original update using eased_frame
+    m, b = chlp.gradient_descent_step(m, b, x, y, learning_rate * t)
+    error = chlp.compute_error(m, b, x, y)
+
+    # plot previous points
+    ax1.scatter([m], [b], [error], color='navy')
+
+    # Update the 3D point
+    point.set_data([m], [b])
+    point.set_3d_properties([error])
+    ax1.set_title('Error = {:.4f}'.format(error))
+
+    # Update the line in the 2D plot
+    line.set_ydata(m * x + b)
+    ax2.set_title(f'm = {m:.4f}, b = {b:.4f}')
+
+    return point, line 
+    
+    
+    # Create animation with easing 
+    anim = FuncAnimation(fig, update_with_easing, frames=frames, interval=interval, blit=False, cache_frame_data=True)
+    """
