@@ -59,7 +59,7 @@ def update(degree):
     line_test.set_data(range(1, degree + 1), test_errors[:degree])  # Use degree to limit test errors
     
     t_err = test_errors[:degree]
-    ax2.text(0.25, 0.65, f"Test Error: {str(t_err[degree-1])}", transform=ax2.transAxes, fontsize=10, verticalalignment='top')
+    ax2.text(0.25, 0.65, f"Test Error: {str(round(t_err[degree-1], 4))}", transform=ax2.transAxes, fontsize=10, verticalalignment='top')
 
     # ax2.set_xlim(1, degree)  # Adjust x-axis limit dynamically
     ax2.relim()            # Recalculate the data limits
