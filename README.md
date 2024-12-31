@@ -32,7 +32,7 @@ The animation consists of two plots:
 1. **Top Plot (Polynomial Regression for Degree: 1 - 15)**:
    - **Data Points**: Blue dots represent training data, and green dots represent testing data.
    - **Model Curve**: The red line represents the polynomial regression model for the polynomial degree from 1 to 15.
-   - **Adjusted R-squared**: 0.8962, indicating the proportion of variance in the dependent variable that is predictable from the independent variable.
+   - **Adjusted R-squared**: indicating the proportion of variance in the dependent variable that is predictable from the independent variable.
 
 2. **Bottom Plot (Bias-Variance Tradeoff)**:
    - **Mean Squared Error (MSE)**: Plotted against polynomial degrees ranging from 1 to 15.
