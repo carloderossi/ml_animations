@@ -41,3 +41,5 @@ The animation consists of two plots:
    - **Test Error**: The minimum test error is 11.3056, indicating the optimal polynomial degree.
 
 These plots illustrate the importance of selecting the appropriate polynomial degree to minimize the test error and achieve a model that generalizes well to unseen data.
+
+![Gradient Descent Linear Regression](./images/gradient_descent.gif)
