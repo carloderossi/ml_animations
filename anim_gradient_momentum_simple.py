@@ -84,7 +84,7 @@ def update(frame):
     #      text.remove()
     # ax.text2D(0.05, 0.95, f"{frame}", transform=ax.transAxes, fontsize=10, verticalalignment='top')
     #ax.text2D(0.05, 0.95, f"Step: {frame}", transform=ax.transAxes, fontsize=10, verticalalignment='top')
-    #annotation.set_text(f"Step: {frame}")
+    annotation.set_text(f"Step: {frame}")
 
     return point_gd, point_mom
 
