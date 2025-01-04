@@ -90,6 +90,6 @@ def update(frame):
 
 #ani = FuncAnimation(fig, update, frames=range(steps), init_func=init, interval=10, blit=False, cache_frame_data=True)
 ani = FuncAnimation(fig, update, frames=range(steps), init_func=init, interval=30, blit=True)
-plt.legend()
+plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), ncol=2)
 plt.get_current_fig_manager().set_window_title("Gradient Descent versus Gradient With Momentum")
 plt.show()
