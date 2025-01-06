@@ -14,7 +14,7 @@ def gradient_f(x, y):
 # Hyperparameters
 # The choice of learning rate and momentum factor significantly impacts the performance.
 momentum = 0.8    # 0.9 If the momentum factor (𝛽) is too high, it may cause oscillations, slowing down convergence
-learning_rate = 0.01  # Conversely, if the learning rate (𝜂) is not suitable, it might not utilize momentum effectively.
+learning_rate = 0.01  # 0.05 Conversely, if the learning rate (𝜂) is not suitable, it might not utilize momentum effectively.
 steps = 100
 # Initialization: The starting point can influence the convergence rate. 
 # If the initialization is such that the momentum method starts in a direction that does not immediately align well with the optimal path, 
@@ -62,7 +62,7 @@ ax.plot_surface(X, Y, Z, alpha=0.5, cmap='viridis')
 point_gd, = ax.plot([], [], [], 'ro', label='Gradient Descent')
 point_mom, = ax.plot([], [], [], 'bo', label='Gradient With Momentum')
 
-annotation = ax.text2D(0.05, 0.95, f"Step: ", transform=ax.transAxes, fontsize=10, verticalalignment='top')
+annotation = ax.text2D(0.001, 0.99, f"Momentum factor: {momentum}", transform=ax.transAxes, fontsize=10, verticalalignment='top')
 
 def init():
     point_gd.set_data([], [])
@@ -80,16 +80,20 @@ def update(frame):
     point_mom.set_3d_properties([f(positions_mom[frame, 0], positions_mom[frame, 1])])
     
     #ax.text(0.25, 0.65, f"Step: {frame}", transform=ax.transAxes, fontsize=10, verticalalignment='top')
-    # for text in ax.texts:  # Remove all text objects from the axes
-    #      text.remove()
+    for text in ax.texts:  # Remove all text objects from the axes
+          text.remove()
     # ax.text2D(0.05, 0.95, f"{frame}", transform=ax.transAxes, fontsize=10, verticalalignment='top')
     #ax.text2D(0.05, 0.95, f"Step: {frame}", transform=ax.transAxes, fontsize=10, verticalalignment='top')
-    annotation.set_text(f"Step: {frame}")
+    #annotation.set_text(f"Step: {frame}")
+    ax.text2D(0.001, 0.99, f"Momentum factor: {momentum}", transform=ax.transAxes, fontsize=10, verticalalignment='top')
 
     return point_gd, point_mom
 
 #ani = FuncAnimation(fig, update, frames=range(steps), init_func=init, interval=10, blit=False, cache_frame_data=True)
-ani = FuncAnimation(fig, update, frames=range(steps), init_func=init, interval=30, blit=True)
+animation = FuncAnimation(fig, update, frames=range(steps), init_func=init, interval=30, blit=True)
 plt.legend(loc='upper center', bbox_to_anchor=(0.5, 1.15), ncol=2)
 plt.get_current_fig_manager().set_window_title("Gradient Descent versus Gradient With Momentum")
 plt.show()
+
+# Save the animation
+animation.save('gradient_descent_momemntum.gif', writer='pillow')
