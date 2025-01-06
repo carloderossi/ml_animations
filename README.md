@@ -184,7 +184,7 @@ Using momentum=0.8 and learning rate=0.01
 Gradient Descent with Momentum introduces an additional hyperparameter, the momentum coefficient (\( \beta \)). Choosing an appropriate value for \( \beta \) is crucial for the algorithm's performance. Typical values range from 0.8 to 0.99. A higher value places more weight on the previous updates, leading to smoother and faster convergence.
 
 Using momentum=0.9 and learning rate=0.05 (oscillations)
-![Gradient Descent Linear Regression](./images/gradient_descent_momemntum.gif)
+![Gradient Descent Linear Regression](./images/gradient_descent_momemntum_oscillations.gif)
 
 ## Advantages of Gradient Descent with Momentum
 - **Faster Convergence**: Momentum helps to accelerate the convergence, especially in the presence of steep slopes or flat regions in the cost function.
