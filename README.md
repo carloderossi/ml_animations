@@ -69,11 +69,11 @@ Gradient Descent is an iterative optimization algorithm used to find the minimum
 ## The Cost Function
 The cost function, often denoted as 𝐽(𝜃), measures the difference between the model's predictions and the actual target values. It is a mathematical representation of the error. For example, in linear regression, the cost function is usually the Mean Squared Error (MSE):
 
-\[ J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 \]
+$\[ J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 \]$
 
 Where:
 - \( m \) is the number of training examples
-- \( h_\theta(x) \) is the hypothesis function (predictions)
+- $\( h_\theta(x) \)$ is the hypothesis function (predictions)
 - \( y \) are the actual target values
 
 ## How Gradient Descent Works
@@ -85,18 +85,18 @@ Gradient Descent works by iteratively updating the model's parameters to move to
 
    
 
-\[ \theta := \theta - \alpha \nabla J(\theta) \]
+$\[ \theta := \theta - \alpha \nabla J(\theta) \]$
 
 
 
    Where:
-   - \( \alpha \) is the learning rate (a small positive value)
-   - \( \nabla J(\theta) \) is the gradient of the cost function
+   - $\( \alpha \)$ is the learning rate (a small positive value)
+   - $\( \nabla J(\theta) \)$ is the gradient of the cost function
 
 4. **Repeat**: Continue iterating until the cost function converges to a minimum value or a stopping criterion is met.
 
 ## Learning Rate
-The learning rate (\( \alpha \)) is a crucial hyperparameter that controls the step size of each iteration. If the learning rate is too large, the algorithm may overshoot the minimum, causing it to diverge. If the learning rate is too small, the algorithm will take too long to converge. Choosing an appropriate learning rate is essential for efficient training.
+The learning rate $(\( \alpha \))$ is a crucial hyperparameter that controls the step size of each iteration. If the learning rate is too large, the algorithm may overshoot the minimum, causing it to diverge. If the learning rate is too small, the algorithm will take too long to converge. Choosing an appropriate learning rate is essential for efficient training.
 
 ## Types of Gradient Descent
 There are three main types of Gradient Descent:
@@ -150,36 +150,37 @@ The key idea behind Gradient Descent with Momentum is to add a fraction of the p
 
    
 
-\[ v_t = \beta v_{t-1} + (1 - \beta) \nabla J(\theta) \]
+$\[ v_t = \beta v_{t-1} + (1 - \beta) \nabla J(\theta) \$
 
 
 
    Where:
-   - \( v_t \) is the current momentum term.
-   - \( \beta \) is the momentum hyperparameter (a value between 0 and 1).
-   - \( \nabla J(\theta) \) is the gradient of the cost function.
+   - $\( v_t \)$ is the current momentum term.
+   - $\( \beta \)$ is the momentum hyperparameter (a value between 0 and 1).
+   - $\( \nabla J(\theta) \)$ is the gradient of the cost function.
 
 4. **Update Parameters**: Adjust the parameters using the momentum term:
 
    
 
-\[ \theta := \theta - \alpha v_t \]
+$\[ \theta := \theta - \alpha v_t \]$
 
 
 
    Where:
-   - \( \alpha \) is the learning rate.
-   - \( v_t \) is the updated momentum term.
+   - $\( \alpha \)$ is the learning rate.
+   - $\( v_t \)$ is the updated momentum term.
 
 5. **Repeat**: Continue iterating until the cost function converges to a minimum value or a stopping criterion is met.
 
 Using momentum=0.8 and learning rate=0.01
+
 ![Gradient Descent Linear Regression](./images/gradient_descent_momemntum.gif)
 
 ## Hyperparameters
-Gradient Descent with Momentum introduces an additional hyperparameter, the momentum coefficient (\( \beta \)). Choosing an appropriate value for \( \beta \) is crucial for the algorithm's performance. Typical values range from 0.8 to 0.99. A higher value places more weight on the previous updates, leading to smoother and faster convergence.
+Gradient Descent with Momentum introduces an additional hyperparameter, the momentum coefficient $(\( \beta \))$. Choosing an appropriate value for $\( \beta \)$ is crucial for the algorithm's performance. Typical values range from 0.8 to 0.99. A higher value places more weight on the previous updates, leading to smoother and faster convergence.
 
-Using momentum=0.9 and learning rate=0.05 (oscillations)
+Using momentum=0.9 and learning rate=0.05 --> oscillations
 ![Gradient Descent Linear Regression](./images/gradient_descent_momemntum_oscillations.gif)
 
 ## Advantages of Gradient Descent with Momentum
