@@ -67,13 +67,9 @@ Gradient Descent is an optimization algorithm used to minimize the cost function
 Gradient Descent is an iterative optimization algorithm used to find the minimum value of a function. In the context of machine learning, this function is typically the cost function (or loss function), which measures how well a model is performing. The goal is to adjust the model's parameters to minimize the cost function, thus improving the model's accuracy.
 
 ## The Cost Function
-The cost function, often denoted as \( J(\theta) \), measures the difference between the model's predictions and the actual target values. It is a mathematical representation of the error. For example, in linear regression, the cost function is usually the Mean Squared Error (MSE):
-
-
+The cost function, often denoted as 𝐽(𝜃), measures the difference between the model's predictions and the actual target values. It is a mathematical representation of the error. For example, in linear regression, the cost function is usually the Mean Squared Error (MSE):
 
 \[ J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2 \]
-
-
 
 Where:
 - \( m \) is the number of training examples
